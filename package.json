@@ -12,8 +12,8 @@
 		"lint": "prettier --check . && eslint src --ext .ts,.vue",
 		"format": "prettier --write . && eslint src --ext .ts,.vue --fix",
 		"fmt": "prettier --write . && eslint src --ext .ts,.vue --fix",
-		"dev": "vite --port 3333",
-		"dev:open": "vite --port 3333 --open",
+		"dev": "vite --port 3333 --host",
+		"dev:open": "vite --port 3333 --open --host",
 		"build": "vue-tsc --noEmit && vite build",
 		"serve": "vite preview"
 	},

@@ -6,18 +6,10 @@ import { InjectionKey } from 'vue';
 import { createStore, useStore as baseUseStore, Store } from 'vuex';
 import DocsSource from './data/DocsSource';
 import MainSource from './data/MainSource';
-import ProxySource from './data/ProxySource';
 import { Documentation, DocumentationCustomFile } from './interfaces/Documentation';
 import { fetchError } from './util/fetchError';
 import { SearchTerm, DocumentType, DocumentLink } from './util/search';
 import { splitName } from './util/splitName';
-import BuildersSource from '~/data/BuildersSource';
-import CollectionSource from '~/data/CollectionSource';
-// import CommandoSource from '~/data/CommandoSource';
-import RESTSource from '~/data/RESTSource';
-// import RPCSource from '~/data/RPCSource';
-import VoiceSource from '~/data/VoiceSource';
-import WSSource from '~/data/WSSource';
 
 export interface State {
 	sources: { source: DocsSource; name: string; id: string }[];
@@ -41,14 +33,6 @@ export const store = createStore<State>({
 	state: {
 		sources: [
 			{ source: MainSource, name: MainSource.name, id: MainSource.id },
-			{ source: BuildersSource, name: BuildersSource.name, id: BuildersSource.id },
-			{ source: CollectionSource, name: CollectionSource.name, id: CollectionSource.id },
-			{ source: ProxySource, name: ProxySource.name, id: ProxySource.id },
-			{ source: RESTSource, name: RESTSource.name, id: RESTSource.id },
-			{ source: VoiceSource, name: VoiceSource.name, id: VoiceSource.id },
-			{ source: WSSource, name: WSSource.name, id: WSSource.id },
-			// { source: CommandoSource, name: CommandoSource.name, id: CommandoSource.id },
-			// { source: RPCSource, name: RPCSource.name, id: RPCSource.id },
 		],
 		source: MainSource,
 		tag: MainSource.defaultTag,
