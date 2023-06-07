@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import semver from 'semver';
 
 interface DocsSourceOptions {
 	id: string;
@@ -77,44 +76,44 @@ export default class DocsSource {
 					}
 				}
 
-				// Build a list of the latest patch versions
-				const latestPatches: { [key: string]: number } = {};
-				for (const tag of tags) {
-					// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-					tag.name = tag.ref.replace('refs/tags/', '');
-					if (semver.valid(tag.name)) {
-						const majorMinor = `${semver.major(tag.name)}.${semver.minor(tag.name)}`;
-						const patch = semver.patch(tag.name);
-						if (patch < latestPatches[majorMinor]) {
-							continue;
-						}
-						latestPatches[majorMinor] = patch;
-					}
-				}
+				// // Build a list of the latest patch versions
+				// const latestPatches: { [key: string]: number } = {};
+				// for (const tag of tags) {
+				// 	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+				// 	tag.name = tag.ref.replace('refs/tags/', '');
+				// 	if (semver.valid(tag.name)) {
+				// 		const majorMinor = `${semver.major(tag.name)}.${semver.minor(tag.name)}`;
+				// 		const patch = semver.patch(tag.name);
+				// 		if (patch < latestPatches[majorMinor]) {
+				// 			continue;
+				// 		}
+				// 		latestPatches[majorMinor] = patch;
+				// 	}
+				// }
 
-				// Build the list of tags
-				for (const tag of tags) {
-					// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-					tag.name = tag.ref.replace('refs/tags/', '');
-					if (!this.tagFilter(tag.name)) {
-						continue;
-					}
+				// // Build the list of tags
+				// for (const tag of tags) {
+				// 	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+				// 	tag.name = tag.ref.replace('refs/tags/', '');
+				// 	if (!this.tagFilter(tag.name)) {
+				// 		continue;
+				// 	}
 
-					// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-					tag.name = tag.name.replace(/(^@.*\/.*@v?)?(?<semver>\d+.\d+.\d+)-?.*/, '$<semver>');
-					// Make sure the tag is the latest patch version
-					if (semver.valid(tag.name)) {
-						const majorMinor = `${semver.major(tag.name)}.${semver.minor(tag.name)}`;
-						const patch = semver.patch(tag.name);
-						if (patch < latestPatches[majorMinor]) {
-							continue;
-						}
-					}
+				// 	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+				// 	tag.name = tag.name.replace(/(^@.*\/.*@v?)?(?<semver>\d+.\d+.\d+)-?.*/, '$<semver>');
+				// 	// Make sure the tag is the latest patch version
+				// 	if (semver.valid(tag.name)) {
+				// 		const majorMinor = `${semver.major(tag.name)}.${semver.minor(tag.name)}`;
+				// 		const patch = semver.patch(tag.name);
+				// 		if (patch < latestPatches[majorMinor]) {
+				// 			continue;
+				// 		}
+				// 	}
 
-					this.tags.push(tag.name);
-				}
+				// 	this.tags.push(tag.name);
+				// }
 
-				this.tags = [...this.branches, ...this.tags.reverse()];
+				this.tags = [...this.branches];
 				// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 				return this.tags;
 			});
