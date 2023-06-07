@@ -122,7 +122,7 @@ export default class DocsSource {
 
 	public async fetchDocs(tag?: string | null) {
 		const tags = await this.fetchTags();
-		const res = await fetch(`https://docs.discordjs.dev/docs/${this.id}/${tag ?? this.defaultTag}.json`);
+		const res = await fetch(`https://raw.githubusercontent.com/${this.docsRepo}/${tag ?? this.defaultTag}/docs/master.json`);
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 		return [tags, await json(res)];
 	}
