@@ -32,7 +32,7 @@ export default class DocsSource {
 
 	public repo = this.options.repo;
 
-	public defaultTag = 'main';
+	public defaultTag = 'master';
 
 	public defaultFile = this.options.defaultFile ?? { category: 'general', id: 'welcome' };
 
