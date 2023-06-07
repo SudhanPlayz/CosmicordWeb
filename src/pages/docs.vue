@@ -18,18 +18,11 @@
 import { whenever, useEventListener, useMagicKeys } from '@vueuse/core';
 import { reactive, ref, computed, watchEffect, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import ProxySource from '../data/ProxySource';
 import BackToTop from '~/components/BackToTop.vue';
 import Sidebar from '~/components/Sidebar.vue';
 import Spinner from '~/components/Spinner.vue';
-import BuildersSource from '~/data/BuildersSource';
-import CollectionSource from '~/data/CollectionSource';
 // import CommandoSource from '~/data/CommandoSource';
 import MainSource from '~/data/MainSource';
-import RESTSource from '~/data/RESTSource';
-// import RPCSource from '~/data/RPCSource';
-import VoiceSource from '~/data/VoiceSource';
-import WSSource from '~/data/WSSource';
 import { useStore } from '~/store';
 import { fetchError } from '~/util/fetchError';
 
@@ -48,14 +41,6 @@ const { Ctrl_K, MetaLeft_K } = useMagicKeys({
 const sources = reactive({
 	[MainSource.id]: MainSource,
 	main: MainSource,
-	[BuildersSource.id]: BuildersSource,
-	[CollectionSource.id]: CollectionSource,
-	[ProxySource.id]: ProxySource,
-	[RESTSource.id]: RESTSource,
-	[VoiceSource.id]: VoiceSource,
-	[WSSource.id]: WSSource,
-	// [CommandoSource.id]: CommandoSource,
-	// [RPCSource.id]: RPCSource,
 });
 
 const showBackToTop = ref(false);
