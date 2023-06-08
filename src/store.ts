@@ -85,9 +85,11 @@ export const store = createStore<State>({
 
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 			const [fetchedDownloads, fetchedStars, fetchedContributors] = await Promise.all([
-				fetch('https://api.npmjs.org/downloads/range/2013-08-21:2100-08-21/discord.js').then(toJSON, noop),
-				fetch('https://api.github.com/repos/discordjs/discord.js').then(toJSON, noop),
-				fetch('https://api.github.com/repos/discordjs/discord.js/stats/contributors').then(toJSON, noop),
+				fetch('https://api.npmjs.org/downloads/range/2013-08-21:2100-08-21/cosmicord.js').then(toJSON, noop).catch(err => {
+					return null
+				}),
+				fetch('https://api.github.com/repos/SudhanPlayz/Cosmicord.js').then(toJSON, noop),
+				fetch('https://api.github.com/repos/SudhanPlayz/Cosmicord.js/stats/contributors').then(toJSON, noop),
 			]);
 
 			if (fetchedDownloads?.downloads) {
