@@ -11,22 +11,16 @@
 	>
 		<div class="col-span-full">
 			<h2>About</h2>
-			<h3>Imagine a bot</h3>
+			<h3>Imagine a Lavalink Wrapper</h3>
 			<p>
-				discord.js is a powerful
+				Cosmicord.js is a powerful and intuitive Lavalink wrapper designed to simplify the process of integrating Lavalink into your
 				<a href="https://nodejs.org" target="_blank" rel="noopener"
 					>Node.js <heroicons-outline-external-link class="h-5 w-5 inline-block mb-1" aria-hidden="true"
 				/></a>
-				module that allows you to interact with the
-				<a href="https://discord.com/developers/docs/intro" target="_blank" rel="noopener"
-					>Discord API <heroicons-outline-external-link class="h-5 w-5 inline-block mb-1" aria-hidden="true"
-				/></a>
-				very easily. It takes a much more object-oriented approach than most other JS Discord libraries, making your
-				bot's code significantly tidier and easier to comprehend.
+				applications.
 			</p>
 			<p>
-				Usability, consistency, and performance are key focuses of discord.js, and it also has nearly 100% coverage of
-				the Discord API. It receives new Discord features shortly after they arrive in the API.
+				Cosmicord.js offers advanced features such as track management, event handling, and extensive configuration options, allowing you to customize the behavior of your audio system. Whether you're a seasoned developer or just starting out, Cosmicord.js empowers you to create immersive audio experiences with ease. 
 			</p>
 		</div>
 		<div>
@@ -57,7 +51,7 @@ import MainSource from '~/data/MainSource';
 import { useStore } from '~/store';
 
 useHead({
-	title: computed(() => 'discord.js'),
+	title: computed(() => 'Cosmicord.js'),
 });
 
 const store = useStore();

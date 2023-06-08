@@ -39,7 +39,7 @@ const { show: showTooltip, hide: hideTooltip } = useTippy(copyButton, {
 
 const copyInstallCmd = async () => {
 	try {
-		await navigator.clipboard.writeText('npm install discord.js');
+		await navigator.clipboard.writeText('npm install cosmicord.js');
 		showTooltip();
 	} catch {}
 

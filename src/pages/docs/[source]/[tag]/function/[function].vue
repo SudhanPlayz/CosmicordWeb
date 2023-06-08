@@ -78,7 +78,7 @@ const returnDescription = computed(() =>
 );
 
 useHead({
-	title: computed(() => `discord.js | ${fn?.name ?? ''}`),
+	title: computed(() => `Cosmicord.js | ${fn?.name ?? ''}`),
 });
 
 onMounted(() => {

@@ -124,7 +124,7 @@ const getLetterFromType = (type: DocumentType) => {
 };
 
 useHead({
-	title: computed(() => `discord.js | Search: ${(query.value as string | undefined) ?? ''}`),
+	title: computed(() => `Cosmicord.js | Search: ${(query.value as string | undefined) ?? ''}`),
 });
 
 watch(

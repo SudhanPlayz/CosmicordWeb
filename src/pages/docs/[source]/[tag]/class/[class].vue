@@ -36,7 +36,7 @@
 				<pre
 					ref="codeblock"
 					class="javascript"
-				><code>{{ docs?.global === 'discord.js' ? 'new ' :  '' }}{{ cls?.construct.name }}(<span v-for="(param, idx) in constructorParameters" :key="param.name">{{ param.name }}{{ (constructorParameters?.length ?? 1) - 1 !== idx ? ', ' : '' }}</span>);</code></pre>
+				><code>{{ docs?.global === 'Cosmicord.js' ? 'new ' :  '' }}{{ cls?.construct.name }}(<span v-for="(param, idx) in constructorParameters" :key="param.name">{{ param.name }}{{ (constructorParameters?.length ?? 1) - 1 !== idx ? ', ' : '' }}</span>);</code></pre>
 				<ParameterTable v-if="cls.construct.params" :parameters="cls.construct.params" />
 			</div>
 
@@ -136,7 +136,7 @@ const methods = computed(() => {
 const typeToArray = (type: any) => type as string[];
 
 useHead({
-	title: computed(() => `discord.js | ${cls?.name ?? ''}`),
+	title: computed(() => `Cosmicord.js | ${cls?.name ?? ''}`),
 });
 
 onMounted(() => {
