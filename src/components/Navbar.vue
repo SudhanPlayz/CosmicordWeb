@@ -20,6 +20,15 @@
 					</router-link>
 
 					<a
+						href="https://discord.gg/M73bmAQTRC"
+						class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white rounded-md py-2 px-3 inline-flex items-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
+						target="_blank"
+						rel="noopener"
+					>
+						<span class="mr-2">Discord</span><heroicons-outline-external-link class="h-5 w-5" />
+					</a>
+
+					<a
 						:href="`https://github.com/${repository}`"
 						class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white rounded-md py-2 px-3 inline-flex items-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
 						target="_blank"
